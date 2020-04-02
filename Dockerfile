@@ -12,4 +12,6 @@ FROM scratch
 COPY --from=builder /etc/ssl/cert.pem /etc/ssl/cert.pem
 COPY --from=builder /go/bin/aws-secretmanager-proxy /aws-secretmanager-proxy
 
+EXPOSE 8080
+
 ENTRYPOINT ["/aws-secretmanager-proxy"]
